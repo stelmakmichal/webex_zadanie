@@ -25,7 +25,7 @@ class TaskList extends Component {
     fetch( backendUrl )
     .then(response => response.json())
     .then(data => {
-      this.setState({tasks: data.response})
+      this.setState({tasks: data.response.reverse()})
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -71,9 +71,6 @@ class TaskList extends Component {
 
   render() {
     const { tasks, handleViewModal, handleModalForm, handleModalData } = this.state
-
-    console.log(this.state)
-
     /**
      * Button pre pridanie zaznamu
      */
